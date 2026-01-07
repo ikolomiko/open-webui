@@ -206,7 +206,10 @@
 		}
 
 		speaking = true;
-		const content = removeAllDetails(message.content);
+		let content = removeAllDetails(message.content);
+		console.log("content before regex: " + content);
+		content.replace(/\s*\[\d+\]\s*/g, ' ');
+		console.log("content after regex: " + content);
 
 		if ($config.audio.tts.engine === '') {
 			let voices = [];
