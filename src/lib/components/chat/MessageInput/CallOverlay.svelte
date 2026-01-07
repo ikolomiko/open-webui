@@ -457,6 +457,7 @@
 	const emojiCache = new Map();
 
 	const fetchAudio = async (content) => {
+		content = content.replace(/\s*\[\d+\]\s*/g, ' ');
 		if (!audioCache.has(content)) {
 			try {
 				// Set the emoji for the content if needed
